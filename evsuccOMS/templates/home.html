@@ -1,0 +1,177 @@
+
+{% extends "base.html" %} {% load humanize %} {% load customfilter %} {% block pageContent %}
+{% load static %}
+<!--Section: Content-->
+<section class="">
+    <h2 class="pt-5 fw-bolder text-warning">Welcome, {{request.user.first_name}}&nbsp;{{request.user.last_name}}!</h2>
+    <hr style="height: 3px; color: black;">
+    <div class="row justify-content-center">
+
+        <!-- --------------------------------------------- Total Organizations --------------------------------------- -->
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 px-1 pb-2">
+            <div class="card card-default rounded-0 shadow bg-primary bg-gradient border-0 text-light">
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div class="row mx-0 w-100 align-items-center">
+                            <div class="col-3">
+                                <i class="fs-1 text-light fa-solid fa-sitemap"></i>
+                            </div>
+                            <div class="col-9">
+                                <h1 class="text-end">{{groups|intcomma}}</h2>
+                            </div>
+                            <div class="col-12 text-end"><b>Total Organizations</b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- --------------------------------------------- Active Organizations --------------------------------------- -->
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 px-1 pb-2">
+            <div class="card card-default rounded-0 shadow bg-success text-light">
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div class="row mx-0 w-100 align-items-center">
+                            <div class="col-3">
+                                <i class="fs-1 text-light fa-solid fa-sitemap"></i>
+                            </div>
+                            <div class="col-9">
+                                <h1 class="text-end">{{active_groups|intcomma}}</h2>
+                            </div>
+                            <div class="col-12 text-end"><b>Active Organizations</b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- --------------------------------------------- Inactive Organizations --------------------------------------- -->
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 px-1 pb-2">
+            <div class="card card-default rounded-0 shadow bg-gradient bg-danger text-light">
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div class="row mx-0 w-100 align-items-center">
+                            <div class="col-3">
+                                <i class="fs-1 text-light fa-solid fa-sitemap"></i>
+                            </div>
+                            <div class="col-9">
+                                <h1 class="text-end">{{inactive_groups|intcomma}}</h2>
+                            </div>
+                            <div class="col-12 text-end"><b>Inactive Organizations</b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ------------------------------------------------- Total Admins ------------------------------------------- -->
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 px-1 pb-2">
+            <div class="card card-default rounded-0 shadow bg-gradient bg-warning text-light">
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div class="row mx-0 w-100 align-items-center">
+                            <div class="col-3">
+                                <i class="fs-1 text-light fa fa-users-cog"></i>
+                            </div>
+                            <div class="col-9">
+                                <h1 class="text-end">{{admins|intcomma}}</h2>
+                            </div>
+                            <div class="col-12 text-end"><b>Admins</b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ------------------------------------------------- Total Members ------------------------------------------- -->
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 px-1 pb-2">
+            <div class="card card-default rounded-0 shadow bg-primary bg-gradient border-0 text-light">
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div class="row mx-0 w-100 align-items-center">
+                            <div class="col-3">
+                                <i class="fs-1 text-light fa fa-user-friends"></i>
+                            </div>
+                            <div class="col-9">
+                                <h1 class="text-end">{{members|intcomma}}</h2>
+                            </div>
+                            <div class="col-12 text-end"><b>Total Members</b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ------------------------------------------------- Active Members ------------------------------------------- -->
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 px-1 pb-2">
+            <div class="card card-default rounded-0 shadow bg-success text-light">
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div class="row mx-0 w-100 align-items-center">
+                            <div class="col-3">
+                                <i class="fs-1 text-light fa fa-user-friends"></i>
+                            </div>
+                            <div class="col-9">
+                                <h1 class="text-end">{{active_members|intcomma}}</h2>
+                            </div>
+                            <div class="col-12 text-end"><b>Active Members</b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ------------------------------------------------- Inactive Members ------------------------------------------- -->
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 px-1 pb-2">
+            <div class="card card-default rounded-0 shadow bg-gradient bg-danger text-light">
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div class="row mx-0 w-100 align-items-center">
+                            <div class="col-3">
+                                <i class="fs-1 text-light fa fa-user-friends"></i>
+                            </div>
+                            <div class="col-9">
+                                <h1 class="text-end">{{inactive_members|intcomma}}</h2>
+                            </div>
+                            <div class="col-12 text-end"><b>Inactive Members</b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ------------------------------------------------- Total User ------------------------------------------- -->
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 px-1 pb-2">
+            <div class="card card-default rounded-0 shadow bg-gradient bg-warning text-light">
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div class="row mx-0 w-100 align-items-center">
+                            <div class="col-3">
+                                <i class="fs-1 text-light fa fa-users-cog"></i>
+                            </div>
+                            <div class="col-9">
+                                <h1 class="text-end">{{users|intcomma}}</h2>
+                            </div>
+                            <div class="col-12 text-end"><b>Users</b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<div class="hr pt-5">
+    <img src="{% static 'assets/default/img/hr.png' %}" id="hr">
+</div>
+<style>
+    .hr img{
+        margin: auto;
+    }
+    #hr{
+        margin-top: -1.5rem;
+        width: 100%;
+    }
+</style>
+</div> {% endblock pageContent %} {% block ScriptBlock %}
+<script>
+</script>
+{% endblock ScriptBlock %}

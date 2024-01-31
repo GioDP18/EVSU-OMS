@@ -1,0 +1,26 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+IMPORTANT: Activate the virtual environment first before you run the server.
+
+----------------* Run Command *----------------
+
+python manage.py runserver
+
+***********************************************
+
+---------------* Admin Account *---------------
+
+Username: Gio.DP
+Password: Password@18
+
+***********************************************
+
+* You can create an admin account by running 
+"python manage.py createsuperuser" in the terminal *
+
+
+***********************************************
+
+----------------* User Account *---------------
+
+Username: gio
+Password: gio12345
